@@ -1,11 +1,11 @@
 import React from 'react';
 
-const List = (props) => {
+const Form = (props) => {
   return (
     <div>
-      list
+      form
     </div>
   );
 };
 
-export default List;
+export default Form;
