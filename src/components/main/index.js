@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import List from './list';
-import Form from './form';
+import List from '../list';
+import Form from '../form';
 
 const Main = () => {
 
@@ -12,11 +12,11 @@ const Main = () => {
   };
 
   const handleDelete = (index) => {
-    console.log(index)
-    const newList = list.filter(todo => list[index] !== todo);
-    setList(newList)
+    const newList = [...list];
+    newList.splice(index, 1);
+    setList(newList);
   };
-  
+
   return (
       <div>
         <List list={list} handleDelete={handleDelete}/>
