@@ -6,14 +6,21 @@ const Main = () => {
 
   const [list, setList] = useState([]);
 
-  const handleSubmit = (value) => {
-    console.log(value);
+  const addTodo = (value) => {
+    const newList = [...list, value];
+    setList(newList);
   };
 
-   return (
+  const handleDelete = (index) => {
+    console.log(index)
+    const newList = list.filter(todo => list[index] !== todo);
+    setList(newList)
+  };
+  
+  return (
       <div>
-        <Form handleSubmit={handleSubmit}/>
-        <List />
+        <List list={list} handleDelete={handleDelete}/>
+        <Form addTodo={addTodo}/>
       </div>
    );
 };
